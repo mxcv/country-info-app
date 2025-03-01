@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { CountriesModule } from './countries/countries.module';
 import path from 'path';
 
 @Module({
@@ -15,6 +16,7 @@ import path from 'path';
         entities: [path.join(__dirname, '**/*.entity.js')],
       }),
     }),
+    CountriesModule,
   ],
 })
 export class AppModule {}
